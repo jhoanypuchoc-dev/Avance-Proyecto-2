@@ -1,0 +1,291 @@
+:root {
+    --primary: #4a90e2;
+    --secondary: #f5f7fa;
+    --dark: #2c3e50;
+    --light: #ffffff;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--dark);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--primary);
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 100%;
+    flex: 1;
+}
+
+.container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.stat-card.completed .stat-number {
+    color: var(--success);
+}
+
+.stat-card.pending .stat-number {
+    color: var(--warning);
+}
+
+/* Progress Section */
+.progress-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.progress-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+    background: #e0e0e0;
+    height: 35px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--success), #27ae60);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: width 0.5s ease;
+    border-radius: 20px;
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+/* Chart Section */
+.chart-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.chart-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Bar Chart */
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    padding: 1rem;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.bar-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.bar-wrapper {
+    width: 100%;
+    height: 150px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.bar {
+    width: 100%;
+    transition: height 0.5s ease;
+    border-radius: 8px 8px 0 0;
+}
+
+.bar-red {
+    background: linear-gradient(180deg, var(--warning), #e67e22);
+}
+
+.bar-green {
+    background: linear-gradient(180deg, var(--success), #27ae60);
+}
+
+.bar-value {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Pie Chart */
+.pie-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+#pie-chart {
+    max-width: 200px;
+}
+
+.chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-color.green {
+    background: var(--success);
+}
+
+.legend-color.red {
+    background: var(--warning);
+}
+
+/* Motivation Card */
+.motivation-card {
+    background: linear-gradient(135deg, var(--primary), #667eea);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.motivation-card p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--dark);
+    color: var(--light);
+}
