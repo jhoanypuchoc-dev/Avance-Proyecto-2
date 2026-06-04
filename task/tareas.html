@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Mis Tareas</title>
+    <link rel="stylesheet" href="tareas.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TaskFlow</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tareas.html" class="active">Mis Tareas</a></li>
+            <li><a href="dashboard.html">Estadísticas</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2>Gestor de Tareas</h2>
+        <p class="subtitle">Organiza y controla tus actividades diarias</p>
+        
+        <!-- Formulario para crear tareas -->
+        <form id="task-form" class="task-form">
+            <input type="text" id="task-input" placeholder="Escribe una nueva tarea..." required autocomplete="off">
+            <button type="submit" class="btn-add">Agregar Tarea</button>
+        </form>
+
+        <!-- Filtros de tareas -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="pending">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+
+        <!-- Lista de tareas -->
+        <ul id="task-list" class="task-list">
+            <!-- Las tareas se cargan aquí dinámicamente -->
+        </ul>
+
+        <!-- Mensaje si no hay tareas -->
+        <div id="empty-message" class="empty-message" style="display: none;">
+            <p>No hay tareas todavía. ¡Agrega tu primera tarea!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TaskFlow System</p>
+    </footer>
+
+    <script src="tareas.js"></script>
+</body>
+</html>
