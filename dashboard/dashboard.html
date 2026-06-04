@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Estadísticas</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TaskFlow</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tareas.html">Mis Tareas</a></li>
+            <li><a href="dashboard.html" class="active">Estadísticas</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h2>Panel de Estadísticas</h2>
+        <p class="subtitle">Visualiza tu progreso y rendimiento</p>
+        
+        <!-- Tarjetas de estadísticas -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <h3>Total de Tareas</h3>
+                <p id="stat-total" class="stat-number">0</p>
+            </div>
+            <div class="stat-card completed">
+                <div class="stat-icon">✅</div>
+                <h3>Completadas</h3>
+                <p id="stat-completed" class="stat-number">0</p>
+            </div>
+            <div class="stat-card pending">
+                <div class="stat-icon">⏳</div>
+                <h3>Pendientes</h3>
+                <p id="stat-pending" class="stat-number">0</p>
+            </div>
+        </div>
+        
+        <!-- Barra de progreso -->
+        <div class="progress-section">
+            <h3>Porcentaje de Avance</h3>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar" style="width: 0%;">0%</div>
+            </div>
+            <p id="progress-text" class="progress-text">0 de 0 tareas completadas</p>
+        </div>
+        
+        <!-- Gráfico de barras -->
+        <div class="chart-section">
+            <h3>Distribución de Tareas</h3>
+            <div class="bar-chart">
+                <div class="bar-group">
+                    <div class="bar-label">Pendientes</div>
+                    <div class="bar-wrapper">
+                        <div id="bar-pending" class="bar bar-red" style="height: 0%;"></div>
+                    </div>
+                    <div id="label-pending" class="bar-value">0%</div>
+                </div>
+                <div class="bar-group">
+                    <div class="bar-label">Completadas</div>
+                    <div class="bar-wrapper">
+                        <div id="bar-completed" class="bar bar-green" style="height: 0%;"></div>
+                    </div>
+                    <div id="label-completed" class="bar-value">0%</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gráfico circular -->
+        <div class="chart-section">
+            <h3>Gráfico Circular</h3>
+            <div class="pie-chart-container">
+                <canvas id="pie-chart" width="200" height="200"></canvas>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-color green"></span>
+                        <span>Completadas</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color red"></span>
+                        <span>Pendientes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mensaje motivacional -->
+        <div id="motivation-card" class="motivation-card">
+            <p id="motivation-text">¡Comienza a agregar tareas para ver tu progreso!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TaskFlow System</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
