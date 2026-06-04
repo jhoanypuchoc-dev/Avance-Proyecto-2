@@ -143,7 +143,6 @@ function editTask(id) {
     }
 }
 
-// Actualizar estadísticas globales
 function updateStats() {
     const stats = {
         total: tasks.length,
